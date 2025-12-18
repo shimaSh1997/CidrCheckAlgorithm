@@ -1,0 +1,27 @@
+در پردازش اولیه، مرتب سازی آیپی آدرس های تبدیل به integer شده را داریم که فرمول محاسبه اکتت آیپی ها از طریق سرچ در نت بدست آورده شده است ولی در  casting نیز به همان صورت محاسبه شده است.
+ در واقع این بخش از کد
+'network_int' : int(network.network_address)
+'broadcast_int' : int(network.broadcast_address)
+
+
+ دیکشنری پایین هم برای آماده سازی دیتایی که از فایل CSV داریم: 
+
+'network':network,
+                'range':cidr,
+                'isp':isp,
+                'as': as_name,
+                'country':country,
+                'network_int': int(network.network_address),
+                'broadcast_int': int(network.broadcast_address),
+                'prefixlen': network.prefixlen
+
+prefixlen 
+به ما کمک می‌کند که در مواردی که میخواهیم cidr کمتر را که در واقع همان بیشترین رینج آیپی را داراست برمی‌گردانیم.
+الگوریتم بعد از انجام سورت در زمان  nlog(n)
+ یک الگوریتم باینری سرچ که در زمان log(n)
+  می‌توانیم یک آیپی را پیدا کنیم در آن که در بازه ي مشخص شده می‌باشد در واقع همان چک کردن 
+
+  rangeIp_list[i]['network_int'] <= t_integer <= rangeIp_list[i]['broadcast_int']
+  
+   آیپی هدف بین اولین آیپی و آخرین رینج آیپی قرار گرفته باشد.منتها فضای سرج محدود به جستجو در log(n )
+   شده است.
